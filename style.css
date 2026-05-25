@@ -1,0 +1,301 @@
+/* Variables de color */
+:root {
+    --primary: #2563eb;
+    --dark: #0d2d5f;
+    --light: #f8fafc;
+    --text: #334155;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--white);
+    scroll-behavior: smooth;
+}
+
+/* Navegación */
+header {
+    background: var(--dark); 
+    width: 250px;           /* Ancho fijo para la barra */
+    height: 100vh;          /* Altura total de la pantalla */
+    position: fixed;        /* No se mueve con el scroll */
+    left: 0;
+    top: 0;
+    padding: 40px 20px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    flex-direction: column; 
+    height: 100%;
+}
+
+.logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px; /* Espacio entre la imagen y los enlaces */
+}
+
+.logo-img {
+    width: 120px;          /* Controla el ancho de la imagen */
+    height: 120px;         /* Controla el alto de la imagen */
+    object-fit: cover;     /* Evita que la foto se estire o se deforme */
+    border-radius: 40%;    /* Opcional: hace la imagen completamente redonda */
+}
+
+
+nav ul {
+    flex-direction: column; 
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 15px 0;
+    margin-left: 0; 
+}
+
+nav ul li a {
+    color: #ffffff;
+    font-size: 1.1rem;
+    display: block;
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+nav ul li a:hover {
+    background: var(--primary);
+    color: var(--white);
+    padding-left: 15px; /* Efecto de desplazamiento al pasar el mouse */
+}
+
+/* IMPORTANTE: Ajustar el cuerpo de la página */
+body {
+    margin-left: 250px; /* Desplazamos todo el contenido a la derecha para que no lo tape la barra */
+}
+
+/* Ajuste para dispositivos móviles */
+@media (max-width: 768px) {
+    header {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    body {
+        margin-left: 0;
+    }
+    nav ul {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+/* Secciones generales */
+section {
+    padding: 100px 5% 60px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--dark);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: var(--primary);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+
+.btn.secondary {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    margin-left: 10px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+/* Grid de Proyectos */
+.grid-proyectos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: var(--light);
+    padding: 25px;
+    border-radius: 12px;
+    transition: box-shadow 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.tag {
+    display: inline-block;
+    background: #dbeafe;
+    color: var(--primary);
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-top: 15px;
+    margin-right: 5px;
+}
+
+/* CV Section */
+.cv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.cv-column h3 {
+    margin-bottom: 15px;
+    border-left: 4px solid var(--primary);
+    padding-left: 10px;
+}
+
+.cv-column ul {
+    list-style: none;
+}
+
+.cv-column li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.cv-column li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    background: var(--dark);
+    color: #94a3b8;
+    margin-top: 50px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cv-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.5rem; }
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espacio entre círculos */
+    margin-top: 20px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;  /* Ancho y alto iguales para el círculo */
+    height: 50px;
+    border-radius: 50%; /* Esto lo hace redondo */
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.whatsapp { background-color: #25d366; } 
+.linkedin { background-color: #0077b5; } 
+.github { background-color: #333; }      
+
+/* Efecto al pasar el mouse */
+.social-btn:hover {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+/* Contenedor principal de la sección */
+.about-content {
+    display: flex;         /* Activa el modo Flexbox (pone los elementos en fila) */
+    align-items: center;   /* Centra verticalmente la imagen y el texto */
+    gap: 40px;             /* Deja un espacio de 40px entre la imagen y el texto */
+    max-width: 800px;
+    margin: 0 auto;        /* Centra todo el bloque en la pantalla */
+}
+
+/* Estilos para la imagen */
+.foto-img {
+    width: 200px;          
+    height: 250px;
+    object-fit: cover;
+    border-radius: 40%;    
+    flex-shrink: 0;        /* Evita que la imagen se deforme o achique si la pantalla se reduce */
+}
+
+/* Estilos para el bloque de texto */
+.about-text {
+    flex: 1;               /* Hace que el texto ocupe todo el espacio restante disponible */
+}
+
+.about-content p {
+    margin-bottom: 15px;   /* Separa los párrafos entre sí */
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: row;
+        text-align: center;     /* Centra el texto */
+    }
+}

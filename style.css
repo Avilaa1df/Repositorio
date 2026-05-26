@@ -73,6 +73,14 @@ nav ul li a {
     padding: 10px;
     border-radius: 8px;
     transition: all 0.3s;
+
+    text-decoration: none; 
+    color: #ebeef1;         
+    font-size: 1.1rem;
+    display: block;
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.3s;
 }
 
 nav ul li a:hover {
@@ -298,4 +306,10 @@ footer {
         flex-direction: row;
         text-align: center;     /* Centra el texto */
     }
+}
+
+.card-link {
+    text-decoration: none; /* ¡Adiós al subrayado! */
+    color: inherit;        /* Hereda el color original que ya tenían tus textos */
+    display: block;        /* Asegura que toda la caja siga siendo clicable */
 }
